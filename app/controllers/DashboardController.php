@@ -9,11 +9,11 @@ class DashboardController extends BaseController {
 
     public function __construct() {
         // Instanciar los modelos necesarios
-        $this->ordenCompraModel = $this->model('OrdenCompra');
-        $this->proveedorModel = $this->model('Proveedor');
-        $this->movimientoStockModel = $this->model('MovimientoStock');
-        $this->categoriaModel = $this->model('Categoria');
-        $this->productoModel = $this->model('Producto');
+        $this->ordenCompraModel = $this->model('OrdenCompraModel');
+        $this->proveedorModel = $this->model('ProveedorModel');
+        $this->movimientoStockModel = $this->model('MovimientoStockModel');
+        $this->categoriaModel = $this->model('CategoriaModel');
+        $this->productoModel = $this->model('ProductoModel');
     }
 
     public function index() {
@@ -39,6 +39,6 @@ class DashboardController extends BaseController {
             'ultimos_movimientos' => $ultimosMovimientos
         ];
 
-        $this->view('dashboard/dashboard', $data);
+        $this->view('pages/dashboard/dashboard', $data);
     }
 }

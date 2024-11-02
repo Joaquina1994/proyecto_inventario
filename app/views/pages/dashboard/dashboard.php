@@ -161,10 +161,10 @@
                         <a href="<?php echo RUTA_URL; ?>/categoria/create" class="btn btn-primary btn-block">Agregar Nueva Categoría</a>
                     </div>
                     <div class="col-md-4">
-                        <a href="<?php echo RUTA_URL; ?>/producto/create" class="btn btn-success btn-block">Agregar Nuevo Proveedor</a>
+                        <a href="<?php echo RUTA_URL; ?>/ProveedorController/create" class="btn btn-success btn-block">Agregar Nuevo Proveedor</a>
                     </div>
                     <div class="col-md-4">
-                        <a href="<?php echo RUTA_URL; ?>/views/pages/orden_compra/create" class="btn btn-info btn-block">Crear Orden de Compra</a>
+                        <a href="<?php echo RUTA_URL; ?>/OrdenCompraController/create" class="btn btn-info btn-block">Crear Orden de Compra</a>
                     </div>
                 </div>
 

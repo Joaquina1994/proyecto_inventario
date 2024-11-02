@@ -2,7 +2,7 @@
 <footer class="d-flex  justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-6 d-flex align-items-center">
         
-            Prof. Juan Pablo Cesarini | <?php echo date('d-m-Y');?> 
+            Joaquina Aguilar | <?php echo date('d-m-Y');?> 
 
     </div>
 

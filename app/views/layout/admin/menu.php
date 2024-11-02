@@ -11,9 +11,9 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="<?php echo RUTA_URL; ?>/dashboard/dashboard">
+        <a class="nav-link" href="<?php echo RUTA_URL; ?>/DashboardController">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <span>Panel de Administración</span>
         </a>
     </li>
 
@@ -31,11 +31,19 @@
         </a>
     </li>
 
-    <!-- Nav Item - Nuevo Producto -->
+    <!-- Nav Item - Nuevo Proveedor -->
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo RUTA_URL; ?>/producto/create">
+        <a class="nav-link" href="<?php echo RUTA_URL; ?>/ProveedorController/create">
             <i class="fas fa-plus-circle"></i>
             <span>Nuevo Proveedor</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Nueva Orden de Compra -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo RUTA_URL; ?>/OrdenCompraController/create">
+            <i class="fas fa-plus-circle"></i>
+            <span>Nueva Orden Compra</span>
         </a>
     </li>
 
@@ -57,6 +65,9 @@
                 <a class="collapse-item" href="<?php echo RUTA_URL; ?>/producto">
                     <i class="fas fa-box"></i> Productos
                 </a>
+                <a class="collapse-item" href="<?php echo RUTA_URL; ?>/ProveedorController/index">
+                    <i class="fas fa-box"></i> Proveedores
+                </a>
             </div>
         </div>
     </li>
@@ -66,9 +77,9 @@
 
     <!-- Nav Item - Ordenes de Compra -->
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo RUTA_URL; ?>/orden_compra/create">
+        <a class="nav-link" href="<?php echo RUTA_URL; ?>/OrdenCompraController/index">
             <i class="fas fa-shopping-cart"></i>
-            <span>Nueva Orden de Compra</span>
+            <span>Ordenes de Compras</span>
         </a>
     </li>
 

@@ -4,6 +4,8 @@
         // instancia los modelos
         public function __construct(){
             $this->authModel=$this->model('AuthModel');
+           
+
             
         }
         

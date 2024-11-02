@@ -44,7 +44,10 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Órdenes de Compra</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Proveedores</h1>
+                    <a href="<?php echo RUTA_URL; ?>/proveedor/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                        <i class="fas fa-plus-circle fa-sm text-white-50"></i> Nuevo Proveedor
+                    </a>
                 </div>
 
                 <!-- Contenido -->
@@ -55,30 +58,34 @@
                                 <table class="table table-bordered" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Proveedor</th>
-                                            <th>Empleado</th>
-                                            <th>Fecha</th>
-                                            <th>Monto</th>
+                                            <th>Razón Social</th>
+                                            <th>CUIT</th>
+                                            <th>Dirección</th>
+                                            <th>Teléfono</th>
+                                            <th>Email</th>
                                             <th class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php if (!empty($data['ordenes'])): ?>
-                                            <?php foreach($data['ordenes'] as $orden): ?>
+                                        <?php if (!empty($data['proveedores'])): ?>
+                                            <?php foreach ($data['proveedores'] as $proveedor): ?>
                                                 <tr>
-                                                    <td><?php echo $orden->proveedor; ?></td>
-                                                    <td><?php echo $orden->usuario; ?></td>
-                                                    <td><?php echo date('d/m/Y', strtotime($orden->fecha_orden)); ?></td>
-                                                    <td><?php echo '$' . number_format($orden->monto_total, 2); ?></td>
+                                                    <td><?php echo $proveedor->razon_social; ?></td>
+                                                    <td><?php echo $proveedor->cuit; ?></td>
+                                                    <td><?php echo $proveedor->direccion; ?></td>
+                                                    <td><?php echo $proveedor->telefono; ?></td>
+                                                    <td><?php echo $proveedor->email; ?></td>
                                                     <td class="text-center">
-                                                        <a href="<?php echo RUTA_URL; ?>/OrdenCompraModel/delete/<?php echo $orden->id_orden; ?>" class="btn btn-outline-danger btn-sm">
+                                                        <a href="<?php echo RUTA_URL; ?>/proveedor/delete/<?php echo $proveedor->id_proveedor; ?>" class="btn btn-outline-danger btn-sm">
                                                             <i class="fas fa-trash-alt mr-2"></i>Eliminar
                                                         </a>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         <?php else: ?>
-                                            <tr><td colspan="5" class="text-center text-secondary">No hay órdenes de compra realizadas</td></tr>
+                                            <tr>
+                                                <td colspan="6" class="text-center text-secondary">No hay proveedores registrados</td>
+                                            </tr>
                                         <?php endif; ?>
                                     </tbody>
                                 </table>
