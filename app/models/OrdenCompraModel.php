@@ -22,6 +22,22 @@ class OrdenCompraModel {
         return $result ?: []; // Retorna un array vacío si no hay registros
     }
 
+    public function getUltimasOrdenes($limite = 5) {
+        $this->db->query("SELECT o.id_orden, o.fecha_orden, o.monto_total, 
+                                 p.razon_social AS proveedor, 
+                                 u.nombre AS usuario
+                          FROM orden_compra o
+                          JOIN proveedor p ON o.id_proveedor = p.id_proveedor
+                          JOIN usuario u ON o.id_usuario = u.id_usuario
+                          WHERE o.deleted_at IS NULL
+                          ORDER BY o.fecha_orden DESC
+                          LIMIT :limite");
+        $this->db->bind('limite', $limite);
+        
+        return $this->db->registers() ?: []; // Retorna un array vacío si no hay registros
+    }
+    
+
     // Guarda una nueva orden de compra
     public function save($data) {
         $this->db->query("INSERT INTO orden_compra 

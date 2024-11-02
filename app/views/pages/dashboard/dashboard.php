@@ -65,22 +65,24 @@
                                         <thead>
                                             <tr>
                                                 <th>Proveedor</th>
+                                                <th>Empleado</th>
                                                 <th>Fecha</th>
                                                 <th>Monto</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if (isset($data['ultimas_ordenes']) && is_array($data['ultimas_ordenes'])): ?>
+                                            <?php if (!empty($data['ultimas_ordenes'])): ?>
                                                 <?php foreach ($data['ultimas_ordenes'] as $orden): ?>
                                                     <tr>
-                                                        <td><?php echo htmlspecialchars($orden->id_proveedor); ?></td>
+                                                        <td><?php echo $orden->proveedor; ?></td>
+                                                        <td><?php echo $orden->usuario; ?></td>
                                                         <td><?php echo date('d/m/Y', strtotime($orden->fecha_orden)); ?></td>
                                                         <td><?php echo '$' . number_format($orden->monto_total, 2); ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             <?php else: ?>
                                                 <tr>
-                                                    <td colspan="3">No hay órdenes disponibles.</td>
+                                                    <td colspan="4" class="text-center text-secondary">No hay órdenes de compra recientes</td>
                                                 </tr>
                                             <?php endif; ?>
 
@@ -169,10 +171,10 @@
                 </div>
 
             </div>
-           
+
 
         </div>
-        
+
         <?php require RUTA_APP . "/views/layout/admin/footer.php"; ?>
     </div>
 </div>
